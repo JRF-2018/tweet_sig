@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!-- Time-stamp: "2018-07-02T02:22:12Z" -->
+
+<html>
+<head>
+<meta charset="utf-8" />
+<style type="text/css">
+#settings {
+  padding: 0 3em;
+}
+#div-selectService {
+  display: none;
+}
+</style>
+</head>
+
+<body>
+<div id="main">
+
+<div id="settings">
+
+<!-- <div><input type="text" id="redirect-url" /></div> -->
+
+<div id="div-selectService"><input type="checkbox" id="settings-serviceAlways" /> 
+  Always use
+  <select id="settings-selectedService">
+    <option value="twitter">Twitter</option>
+    <option value="facebook">Facebook</option>
+ </select>.
+</div>
+<div><input type="checkbox" id="settings-closeTweetTab" /> 
+  Close a tab after tweeting.
+</div>
+<div><input type="checkbox" id="settings-addCite" /> 
+  Add quotation marks <input type="text" id="settings-citeOpen" size="3" />, <input type="text" id="settings-citeClose" size="3" /> and a URL when copying a selection.
+</div>
+<div><input type="checkbox" id="settings-addTitle" /> 
+  Add title with <input type="text" id="settings-titleOpen" size="3" />, <input type="text" id="settings-titleClose" size="3" /> when copying a selection.
+</div>
+
+</div>
+
+<script src="options.js"></script>
+</body>
+
+</html>

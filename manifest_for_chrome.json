@@ -1,0 +1,57 @@
+{
+  "manifest_version": 2,
+  "name": "Tweet Sig",
+  "version": "0.6",
+
+  "description": "Post data in '#tweet-sig-in' or selection and put the posted url into '#tweet-sig-out' or clipboard.",
+
+  "icons": {
+    "48": "icons/tweet_sig_48.png"
+  },
+
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3cTgdrVf3ArFvU4634wEX89zD//HB5cYYuTDlfvdaj8sVx5wwz6pin0lUSRgXb3y7b7mGgDfMbBKpIdO8dyEJgDCDCZoWTQKrW/TBNCec+XjtvKXN9w9eN1SUbwVwUz52ptAKsLZIg3rwx82hS0Ys/YZHy2wOCpVsv5FZFdQt6vhanl7eKRU/qKM2UpxjcM97aOHF0E9vUk5STGiRpTBZSXMz9Yhkx74LAKCgeiWpC0n6eG6Rj863IwWloWdduGqnXXpUNFONeQECpTr4yxnYHOIoYJbdLQn/K0g6/6VYXEXkRqSGmgU3EEassPo2SzeC0BFhtF8857PFYtCvCI7zQIDAQAB",
+
+  "permissions": [
+    "identity",
+    "tabs",
+    "contextMenus",
+    "clipboardWrite",
+    "storage"
+  ],
+
+  "background": {
+    "persistent": false,
+    "scripts": ["background.js"]
+  },
+
+  "options_ui": {
+    "page": "options.html"
+  },
+
+  "page_action": {
+    "browser_style": false,
+    "default_icon": "icons/tweet_sig_32.png",
+    "default_title": "Tweet Sig"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "exclude_matches": [
+	"https://twitter.com/intent/tweet*",
+	"http://jrf.cocolog-nifty.com/archive/tweet_sig/fb_page_poster.html"
+      ],
+      "js": ["check_form.js"]
+    },
+
+    {
+      "matches": ["https://twitter.com/intent/tweet/complete?*"],
+      "js": ["clipboard.js", "check_comp.js"]
+    },
+
+    {
+      "matches": ["http://jrf.cocolog-nifty.com/archive/tweet_sig/fb_page_poster.html"],
+      "js": ["clipboard.js", "check_fbpp.js"]
+    }
+  ]
+}

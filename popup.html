@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!-- Time-stamp: "2018-01-06T16:36:20Z" -->
+
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<style type="text/css">
+/* cited from chrome://browser/content/extension.css of Firefox */
+html,
+body {
+  background: transparent;
+  box-sizing: border-box;
+  color: #222426;
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  font: caption;
+  margin: 0;
+  padding: 0;
+  -moz-user-select: none;
+}
+
+body * {
+  box-sizing: border-box;
+  text-align: start;
+}
+
+.panel-section {
+  display: flex;
+  flex-direction: row;
+}
+
+.panel-section-separator {
+  background-color: rgba(0, 0, 0, 0.15);
+  min-height: 1px;
+}
+
+.panel-section-list {
+  flex-direction: column;
+  padding: 4px 0;
+}
+
+.panel-list-item {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 24px;
+  padding: 0 16px;
+}
+
+.panel-list-item:not(.disabled):hover {
+  background-color: rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.panel-list-item:not(.disabled):hover:active {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.panel-list-item.disabled {
+  color: #999;
+}
+
+.panel-list-item > .icon {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.panel-list-item > .text {
+  flex-grow: 10;
+}
+
+.panel-list-item > .text-shortcut {
+  color: #808080;
+  font-family: "Lucida Grande", caption;
+  font-size: .847em;
+  justify-content: flex-end;
+}
+
+.panel-section-list .panel-section-separator {
+  margin: 4px 0;
+}
+
+
+.panel-list-item * {
+  vertical-align: middle;
+}
+
+img {
+  padding-right: 0.3em;
+}
+</style>
+</head>
+
+<body>
+<div class="panel">
+<div id="panel-list" class="panel-section panel-section-list">
+
+<div class="panel-list-item" id="twitter">
+<div class="icon"><img src="/icons/m/twitter.ico"/></div>
+<div class="text">Twitter</div>
+<div class="text-shortcut"></div>
+</div>
+
+<div class="panel-list-item" id="facebook">
+<div class="icon"><img src="/icons/m/facebook.ico"/></div>
+<div class="text">Facebook</div>
+<div class="text-shortcut"></div>
+</div>
+
+</div>
+</div>
+
+<script src="popup.js"></script>
+</body>
+
+</html>
