@@ -1,6 +1,6 @@
 # Tweet Sig
 
-<!-- Time-stamp: "2020-04-07T06:13:14Z" -->
+<!-- Time-stamp: "2020-04-07T06:26:58Z" -->
 
 ## What is this?
 
@@ -17,7 +17,7 @@ citation. The currently available message service is only Twitter.
 
 Read [README_en.html](http://jrf.cocolog-nifty.com/archive/tweet_sig/README_en.html).
 
-A vsersion for Firefox for Android is available at https://github.com/JRF-2018/tweet_sig_mobile .
+A version for Firefox for Android is available at https://github.com/JRF-2018/tweet_sig_mobile .
 
 
 ## これは何？
